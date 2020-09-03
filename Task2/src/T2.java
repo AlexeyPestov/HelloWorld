@@ -2,14 +2,14 @@ import java.util.Scanner;
 
 public class T2 {
     public static void main(String[] args) {
-        System.out.println("Введите трёхзначное число");
+        System.out.println("Введите число");
         Scanner scanner = new Scanner(System.in);
-        Integer number = scanner.nextInt();
-        Integer sum = 0;
-        Integer lastNum = number % 10;
-        Integer secNum = (number / 10) % 10;
-        Integer firstNum = number / 100;
-        sum = firstNum + secNum + lastNum;
+        String enterLine = scanner.nextLine();
+        char[] chDigits = enterLine.toCharArray();
+        int sum = 0;
+        for (char chDigit : chDigits)   {
+            sum += Integer.parseInt(String.valueOf(chDigit));
+        }
         System.out.println("Сумма чисел " + sum);
     }
 }

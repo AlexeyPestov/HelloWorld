@@ -4,23 +4,23 @@ public class T6 {
     public static void main(String[] args) {
         System.out.println("Введите целое число");
         Scanner scanner = new Scanner(System.in);
-        Integer number = scanner.nextInt();
-        String description = "";
+        int number = scanner.nextInt();
+        StringBuilder description = new StringBuilder();
         if (number == 0)    {
             System.out.println("Ноль");
         }
         else    {
             if (number > 0) {
-                description += "Положительное ";
+                description.append("Положительное ");
             }
             else    {
-                description += "Отрицательное ";
+                description.append("Отрицательное ");
             }
             if (number % 2 == 0)    {
-                description += "чётное ";
+                description.append("чётное ");
             }
             else    {
-                description += "нечётное ";
+                description.append("нечётное ");
             }
             System.out.println(description + "число");
         }

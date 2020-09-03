@@ -1,18 +1,13 @@
-import java.util.Arrays;
-
 public class T10 {
     public static void main(String[] args) {
-        Integer[] arrayNum = new Integer[] {5, 10, 0 , -6, 5, 3, 0, -34, 0, 32, 56, 0, 24, -52};
-        Integer[] a1 =  Arrays.stream(arrayNum).filter(el -> el != 0).toArray(Integer[]::new);
-        Integer[] a2 =  Arrays.stream(arrayNum).filter(el -> el == 0).toArray(Integer[]::new);
-        int i = 0;
-        while (i < a1.length) {
-            arrayNum[i] = a1[i];
-            i++;
-        }
-        for (int j = 0; j < a2.length; j++) {
-            arrayNum[i] = a2[j];
-            i++;
+        int[] arrayNum = new int[] {5, 10, 0 , -6, 5, 3, 0, -34, 0, 32, 56, 0, 24, -52};
+        for (int i = arrayNum.length-1; i >= 0 ;i--)    {
+            if (arrayNum[i] == 0)   {
+                for (int j = i; j < arrayNum.length-1 && arrayNum[j+1] != 0; j++)  {
+                    arrayNum[j] = arrayNum[j+1];
+                    arrayNum[j+1] = 0;
+                }
+            }
         }
         for (Integer el : arrayNum) {
             System.out.println(el);
