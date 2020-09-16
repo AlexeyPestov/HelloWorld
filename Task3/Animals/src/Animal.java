@@ -1,4 +1,4 @@
-public class Animal {
+public abstract class Animal {
 
     private String food;
     private String location;
@@ -24,12 +24,9 @@ public class Animal {
         this.location = location;
     }
 
-    public void makeNoise() {
-    }
+    public abstract void makeNoise();
 
-    public void eat() {
-    }
+    public abstract void eat();
 
-    public void sleep() {
-    }
+    public abstract void sleep();
 }

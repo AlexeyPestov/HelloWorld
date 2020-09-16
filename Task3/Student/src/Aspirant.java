@@ -1,7 +1,10 @@
 public class Aspirant extends Student {
 
-    public Aspirant(String firstName, Double averageMark) {
+    private String nameScientigicWork;
+
+    public Aspirant(String firstName, Double averageMark, String nameScientigicWork) {
         super(firstName, averageMark);
+        this.nameScientigicWork = nameScientigicWork;
     }
 
     @Override
