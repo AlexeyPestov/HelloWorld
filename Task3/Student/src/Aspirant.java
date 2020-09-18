@@ -2,8 +2,8 @@ public class Aspirant extends Student {
 
     private String nameScientigicWork;
 
-    public Aspirant(String firstName, Double averageMark, String nameScientigicWork) {
-        super(firstName, averageMark);
+    public Aspirant(String firstName, String lastName, String group, Double averageMark, String nameScientigicWork) {
+        super(firstName, lastName, group, averageMark);
         this.nameScientigicWork = nameScientigicWork;
     }
 
