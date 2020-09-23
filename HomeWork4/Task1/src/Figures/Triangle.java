@@ -1,12 +1,12 @@
 package Figures;
 
 public class Triangle implements Shape {
-    private Double a;
-    private Double b;
-    private Double c;
-    private Double p;
+    private double a;
+    private double b;
+    private double c;
+    private double p;
 
-    public Triangle(Double a, Double b, Double c) {
+    public Triangle(double a, double b, double c) {
         this.a = a;
         this.b = b;
         this.c = c;

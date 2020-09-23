@@ -1,5 +1,5 @@
 public class Engine {
-    private Integer power;
+    private int power;
     private String manufacturer;
 
     public Engine(Integer power, String manufacturer) {
@@ -7,7 +7,7 @@ public class Engine {
         this.manufacturer = manufacturer;
     }
 
-    public Integer getPower() {
+    public int getPower() {
         return power;
     }
 

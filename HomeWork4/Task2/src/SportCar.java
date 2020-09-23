@@ -1,8 +1,8 @@
 public class SportCar extends Car {
-    private Double maxSpeed;
+    private double maxSpeed;
 
-    public SportCar(Double maxSpeed, String brand, String clas, Double weight, Integer enginePower, String engineManufacturen) {
-        super(brand, clas, weight, enginePower, engineManufacturen);
+    public SportCar(double maxSpeed, String brand, String klass, double weight, int enginePower, String engineManufacturen) {
+        super(brand, klass, weight, enginePower, engineManufacturen);
         this.maxSpeed = maxSpeed;
     }
 

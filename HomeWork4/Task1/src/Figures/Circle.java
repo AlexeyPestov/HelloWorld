@@ -1,9 +1,9 @@
 package Figures;
 
 public class Circle implements Shape {
-    private Double radius;
+    private double radius;
 
-    public Circle(Double radius) {
+    public Circle(double radius) {
         this.radius = radius;
     }
 

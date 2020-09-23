@@ -1,8 +1,8 @@
 public class Lorry extends Car {
-    private Double liftingCapacity;
+    private double liftingCapacity;
 
-    public Lorry(Double liftingCapacity, String brand, String clas, Double weight, Integer enginePower, String engineManufacturen) {
-        super(brand, clas, weight, enginePower, engineManufacturen);
+    public Lorry(double liftingCapacity, String brand, String klass, double weight, int enginePower, String engineManufacturen) {
+        super(brand, klass, weight, enginePower, engineManufacturen);
         this.liftingCapacity = liftingCapacity;
     }
 
