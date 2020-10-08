@@ -1,3 +1,5 @@
+package RAM;
+
 public abstract class RAM {
 
     protected String manufacturer;

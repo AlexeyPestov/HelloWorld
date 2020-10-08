@@ -1,3 +1,5 @@
+package Monitors;
+
 public class Monitor {
     private String manufacturer = "Dell";
 

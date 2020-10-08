@@ -1,3 +1,7 @@
+package StorageDevice;
+
+import Types.TypeStorage;
+
 public abstract class StorageDevice {
     protected String manufacturer;
     protected double volumeMemory;

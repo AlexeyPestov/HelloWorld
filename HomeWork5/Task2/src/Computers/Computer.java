@@ -1,6 +1,14 @@
+package Computers;
+
+import GraphichCard.GraphicsCard;
+import Processor.Processor;
+import RAM.RAM;
+import StorageDevice.StorageDevice;
+import Monitors.Monitor;
+
 public abstract class Computer {
 
-    protected Processor processor;
+    Processor processor;
     protected RAM ram;
     protected GraphicsCard graphicsCard;
     protected StorageDevice storageDevice;
@@ -44,5 +52,15 @@ public abstract class Computer {
 
     public void setMonitor(Monitor monitor) {
         this.monitor = monitor;
+    }
+
+    public void isCreate()  {
+        String type = (this instanceof HomeComputer) ? "Домашний" : "Рабочий";
+        if (processor != null && ram != null && graphicsCard != null && storageDevice != null && monitor != null)   {
+            System.out.println(type + " компьютер собран");
+        }
+        else {
+            System.out.println(type + " компьютер не собран");
+        }
     }
 }

@@ -1,3 +1,5 @@
+package Processor;
+
 public class Processor2 extends Processor {
     public Processor2() {
         clockFrequency = 8742.0;

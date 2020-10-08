@@ -1,3 +1,5 @@
+package RAM;
+
 public class RAM2 extends RAM {
     public RAM2()   {
         manufacturer = "Microsoft";

@@ -1,3 +1,7 @@
+package GraphichCard;
+
+import Types.TypeCooling;
+
 public abstract class GraphicsCard {
 
     protected String manufacturer;

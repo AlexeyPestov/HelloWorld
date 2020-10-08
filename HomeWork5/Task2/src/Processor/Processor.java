@@ -1,10 +1,12 @@
+package Processor;
+
 public abstract class Processor {
 
-    protected double clockFrequency;
-    protected int countCore;
-    protected double cashMemory;
-    protected String name;
-    protected String manufacturer;
+    double clockFrequency;
+    int countCore;
+    double cashMemory;
+    String name;
+    String manufacturer;
 
     public double getClockFrequency() {
         return clockFrequency;

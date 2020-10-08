@@ -1,3 +1,7 @@
+package GraphichCard;
+
+import Types.TypeCooling;
+
 public class GraphicsCard1 extends GraphicsCard {
     public GraphicsCard1() {
         manufacturer = "Nivida";
