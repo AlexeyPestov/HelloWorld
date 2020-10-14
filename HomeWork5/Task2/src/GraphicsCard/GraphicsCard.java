@@ -1,20 +1,18 @@
-package RAM;
+package GraphicsCard;
 
 import Computers.Computer;
 import Computers.HomeComputer;
+import Types.TypeCooling;
 
-public abstract class RAM {
+public abstract class GraphicsCard {
 
     protected String manufacturer;
     protected double volumeMemory;
-    protected double frequency;
     protected String typeMemory;
-
-    public String getManufacturer() {
-        return manufacturer;
-    }
+    protected TypeCooling typeCooling;
 
     public void setManufacturer(String manufacturer) {
         this.manufacturer = manufacturer;
     }
+
 }

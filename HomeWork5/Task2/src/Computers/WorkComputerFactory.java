@@ -1,7 +1,4 @@
-package Factory;
-
-import Computers.Computer;
-import Computers.WorkComputer;
+package Computers;
 
 public class WorkComputerFactory extends ComputerFactory {
     @Override

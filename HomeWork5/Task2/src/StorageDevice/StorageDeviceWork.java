@@ -2,8 +2,8 @@ package StorageDevice;
 
 import Types.TypeStorage;
 
-public class StorageDevice2 extends StorageDevice {
-    public StorageDevice2() {
+public class StorageDeviceWork extends StorageDevice {
+    public StorageDeviceWork() {
         manufacturer = "Delta";
         volumeMemory = 80000000;
         typeStorage = TypeStorage.HDD;

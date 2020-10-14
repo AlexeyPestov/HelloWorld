@@ -1,57 +1,24 @@
 package Computers;
 
-import GraphichCard.GraphicsCard;
-import Processor.Processor;
-import RAM.RAM;
-import StorageDevice.StorageDevice;
+import GraphicsCard.*;
+import Processor.*;
+import RAM.*;
+import StorageDevice.*;
 import Monitors.Monitor;
 
 public abstract class Computer {
 
-    Processor processor;
+    protected Processor processor;
     protected RAM ram;
     protected GraphicsCard graphicsCard;
     protected StorageDevice storageDevice;
     protected Monitor monitor = new Monitor();
 
-    public Processor getProcessor() {
-        return processor;
-    }
-
-    public void setProcessor(Processor processor) {
-        this.processor = processor;
-    }
-
-    public RAM getRam() {
-        return ram;
-    }
-
-    public void setRam(RAM ram) {
-        this.ram = ram;
-    }
-
-    public GraphicsCard getGraphicsCard() {
-        return graphicsCard;
-    }
-
-    public void setGraphicsCard(GraphicsCard graphicsCard) {
-        this.graphicsCard = graphicsCard;
-    }
-
-    public StorageDevice getStorageDevice() {
-        return storageDevice;
-    }
-
-    public void setStorageDevice(StorageDevice storageDevice) {
-        this.storageDevice = storageDevice;
-    }
-
-    public Monitor getMonitor() {
-        return monitor;
-    }
-
-    public void setMonitor(Monitor monitor) {
-        this.monitor = monitor;
+    public Computer(GraphicsCardFactory graphicsCardFactory, ProcessorFactory processorFactory, RAMFactory ramFactory, StorageDeviceFactory storageDeviceFactory) {
+        this.graphicsCard = graphicsCardFactory.createGraphics();
+        this.processor = processorFactory.createProcessor();
+        this.ram = ramFactory.createRAM();
+        this.storageDevice = storageDeviceFactory.createStorageDevice();
     }
 
     public void isCreate()  {

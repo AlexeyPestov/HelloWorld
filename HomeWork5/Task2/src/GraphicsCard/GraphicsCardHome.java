@@ -1,9 +1,9 @@
-package GraphichCard;
+package GraphicsCard;
 
 import Types.TypeCooling;
 
-public class GraphicsCard1 extends GraphicsCard {
-    public GraphicsCard1() {
+public class GraphicsCardHome extends GraphicsCard {
+    public GraphicsCardHome() {
         manufacturer = "Nivida";
         volumeMemory = 77799;
         typeMemory = "A";

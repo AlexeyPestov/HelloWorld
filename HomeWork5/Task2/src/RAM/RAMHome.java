@@ -1,7 +1,7 @@
 package RAM;
 
-public class RAM1 extends RAM {
-    public RAM1()   {
+public class RAMHome extends RAM {
+    public RAMHome()   {
         manufacturer = "Apple";
         volumeMemory = 2000;
         frequency = 780;

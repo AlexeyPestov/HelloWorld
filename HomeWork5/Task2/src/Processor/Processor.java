@@ -1,5 +1,8 @@
 package Processor;
 
+import Computers.Computer;
+import Computers.HomeComputer;
+
 public abstract class Processor {
 
     double clockFrequency;
@@ -8,38 +11,6 @@ public abstract class Processor {
     String name;
     String manufacturer;
 
-    public double getClockFrequency() {
-        return clockFrequency;
-    }
-
-    public void setClockFrequency(double clockFrequency) {
-        this.clockFrequency = clockFrequency;
-    }
-
-    public int getCountCore() {
-        return countCore;
-    }
-
-    public void setCountCore(int countCore) {
-        this.countCore = countCore;
-    }
-
-    public double getCashMemory() {
-        return cashMemory;
-    }
-
-    public void setCashMemory(double cashMemory) {
-        this.cashMemory = cashMemory;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
     public String getManufacturer() {
         return manufacturer;
     }
@@ -47,4 +18,5 @@ public abstract class Processor {
     public void setManufacturer(String manufacturer) {
         this.manufacturer = manufacturer;
     }
+
 }

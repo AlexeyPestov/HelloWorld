@@ -1,7 +1,7 @@
 package Processor;
 
-public class Processor2 extends Processor {
-    public Processor2() {
+public class ProcessorWork extends Processor {
+    public ProcessorWork() {
         clockFrequency = 8742.0;
         countCore = 1;
         name = "Процессор2";
