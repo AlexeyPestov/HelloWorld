@@ -1,15 +1,20 @@
 package GraphicsCard;
 
-import Computers.Computer;
-import Computers.HomeComputer;
 import Types.TypeCooling;
 
-public abstract class GraphicsCard {
+public class GraphicsCard {
 
-    protected String manufacturer;
-    protected double volumeMemory;
-    protected String typeMemory;
-    protected TypeCooling typeCooling;
+    String manufacturer;
+    double volumeMemory;
+    String typeMemory;
+    TypeCooling typeCooling;
+
+    public GraphicsCard(String manufacturer, double volumeMemory, String typeMemory, TypeCooling typeCooling) {
+        this.manufacturer = manufacturer;
+        this.volumeMemory = volumeMemory;
+        this.typeMemory = typeMemory;
+        this.typeCooling = typeCooling;
+    }
 
     public void setManufacturer(String manufacturer) {
         this.manufacturer = manufacturer;

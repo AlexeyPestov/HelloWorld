@@ -1,5 +1,7 @@
 package Computers;
 
+import Types.ComputerType;
+
 public interface Strategy {
-    ComputerFactory choiceType();
+    ComputerFactory choiceType(ComputerType computerType);
 }
