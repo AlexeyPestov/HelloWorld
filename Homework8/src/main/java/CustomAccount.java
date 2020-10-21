@@ -1,8 +1,14 @@
-import Exceptions.*;
+import Exceptions.NotEnoughMoneyException;
+import Exceptions.UnknownAccountException;
 import org.h2.jdbc.JdbcSQLException;
 
-import java.io.*;
-import java.sql.*;
+import java.io.IOException;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
 
 public class CustomAccount extends Account implements AccountService {
 
@@ -13,7 +19,12 @@ public class CustomAccount extends Account implements AccountService {
     private static String sql = null;
 
 
-    public CustomAccount() throws IOException, SQLException {
+    public static void closeConnections() throws SQLException {
+        prStatement.close();
+        connection.close();
+    }
+
+    public CustomAccount() throws SQLException {
         super();
         sql = "INSERT INTO ACCOUNTS (id, holder, amount) VALUES (?, ?, ?)";
         connection = DriverManager.getConnection("jdbc:h2:mem:test;INIT=RUNSCRIPT FROM './schema.sql'");
@@ -82,6 +93,7 @@ public class CustomAccount extends Account implements AccountService {
         statement.execute(sql);
         System.out.println("Со счета " + from + " снято " + amount + ". Теперь там " + (amountAccountFrom - amount));
         System.out.println("На счет " + to + " внесено " + amount + ". Теперь там " + (amountAccountTo + amount));
+
     }
 
 
@@ -95,6 +107,7 @@ public class CustomAccount extends Account implements AccountService {
             int amount = resultSet.getInt(3);
             System.out.println(id + " " + holder + " " + amount);
         }
+        prStatement.close();
     }
 
     private int rand() {
@@ -115,7 +128,7 @@ public class CustomAccount extends Account implements AccountService {
             resultSet.next();
             return resultSet.getInt(1);
         } catch (JdbcSQLException ex) {
-            return null;
-        }
-    }
+            ex.printStackTrace();
+            return -1;
+        } }
 }

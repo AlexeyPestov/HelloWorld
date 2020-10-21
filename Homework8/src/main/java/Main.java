@@ -27,7 +27,7 @@ public class Main {
                     ca.transfer(Integer.parseInt(command[1]), Integer.parseInt(command[2]), Integer.parseInt(command[3]));
                     break;
                 }
-                case "7": {
+                case "all": {
                     ca.all();
                     break;
                 }
@@ -36,6 +36,7 @@ public class Main {
                     break;
                 }
             }
+            CustomAccount.closeConnections();
         }
     }
 }
