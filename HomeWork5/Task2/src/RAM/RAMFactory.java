@@ -3,7 +3,7 @@ package RAM;
 import Types.ComputerType;
 
 public class RAMFactory {
-    public RAM createRAM(ComputerType computerType)  {
+    public static RAM createRAM(ComputerType computerType)  {
         if (computerType == ComputerType.HOME)  {
             return new RAM("Apple", 2000, 780, "Type1");
         }

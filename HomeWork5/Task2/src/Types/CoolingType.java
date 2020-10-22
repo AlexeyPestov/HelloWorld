@@ -1,5 +1,5 @@
 package Types;
 
-public enum TypeCooling {
+public enum CoolingType {
     PASSIVE, ACTIVE
 }

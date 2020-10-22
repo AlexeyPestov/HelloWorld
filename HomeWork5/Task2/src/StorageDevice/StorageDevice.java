@@ -1,17 +1,18 @@
 package StorageDevice;
 
-import Types.TypeStorage;
+import Components.Component;
+import Types.StorageType;
 
-public class StorageDevice {
-    protected String manufacturer;
-    protected double volumeMemory;
-    protected TypeStorage typeStorage;
-    protected String formFactor;
+public class StorageDevice implements Component {
+    private String manufacturer;
+    private double volumeMemory;
+    private StorageType storageType;
+    private String formFactor;
 
-    public StorageDevice(String manufacturer, double volumeMemory, TypeStorage typeStorage, String formFactor) {
+    public StorageDevice(String manufacturer, double volumeMemory, StorageType storageType, String formFactor) {
         this.manufacturer = manufacturer;
         this.volumeMemory = volumeMemory;
-        this.typeStorage = typeStorage;
+        this.storageType = storageType;
         this.formFactor = formFactor;
     }
 

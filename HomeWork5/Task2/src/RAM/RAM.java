@@ -1,11 +1,13 @@
 package RAM;
 
-public class RAM {
+import Components.Component;
 
-    protected String manufacturer;
-    protected double volumeMemory;
-    protected double frequency;
-    protected String typeMemory;
+public class RAM implements Component {
+
+    private String manufacturer;
+    private double volumeMemory;
+    private double frequency;
+    private String typeMemory;
 
     public RAM(String manufacturer, double volumeMemory, double frequency, String typeMemory) {
         this.manufacturer = manufacturer;

@@ -1,15 +1,14 @@
 package Processor;
 
-public class Processor {
+import Components.Component;
 
-    double clockFrequency;
-    int countCore;
-    double cashMemory;
-    String name;
-    String manufacturer;
+public class Processor implements Component {
 
-    public Processor() {
-    }
+    private double clockFrequency;
+    private int countCore;
+    private double cashMemory;
+    private String name;
+    private String manufacturer;
 
     public Processor(double clockFrequency, int countCore, double cashMemory, String name, String manufacturer) {
         this.clockFrequency = clockFrequency;

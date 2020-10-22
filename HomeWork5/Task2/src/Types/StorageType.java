@@ -1,5 +1,5 @@
 package Types;
 
-public enum TypeStorage {
+public enum StorageType {
     HDD, SSD
 }

@@ -1,19 +1,20 @@
 package GraphicsCard;
 
-import Types.TypeCooling;
+import Components.Component;
+import Types.CoolingType;
 
-public class GraphicsCard {
+public class GraphicsCard implements Component {
 
-    String manufacturer;
-    double volumeMemory;
-    String typeMemory;
-    TypeCooling typeCooling;
+    private String manufacturer;
+    private double volumeMemory;
+    private String typeMemory;
+    private CoolingType coolingType;
 
-    public GraphicsCard(String manufacturer, double volumeMemory, String typeMemory, TypeCooling typeCooling) {
+    public GraphicsCard(String manufacturer, double volumeMemory, String typeMemory, CoolingType coolingType) {
         this.manufacturer = manufacturer;
         this.volumeMemory = volumeMemory;
         this.typeMemory = typeMemory;
-        this.typeCooling = typeCooling;
+        this.coolingType = coolingType;
     }
 
     public void setManufacturer(String manufacturer) {
