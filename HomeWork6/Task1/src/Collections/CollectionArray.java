@@ -1,32 +1,48 @@
 package Collections;
 
 public class CollectionArray <T> implements CustomCollection<T> {
-    T[] arrayElem;
+    static int countElem = 20;
+    T[] arrayElem = (T[]) new Object[countElem];
 
     @Override
     public void add (T newElem)    {
-        if (arrayElem == null)  {
-            arrayElem = (T[])new Object[1];
-            arrayElem[0] = newElem;
-        }
-        else {
-            T[] arrayElemNew = (T[]) new Object[arrayElem.length + 1];
-            for (int i = 0; i < arrayElem.length; i++) {
-                arrayElemNew[i] = arrayElem[i];
+        int count = count();
+        if (count == countElem)   {
+            int i = 0;
+            T[] arrayElemCopy = arrayElem;
+            countElem *= 2;
+            arrayElem = (T[]) new Object[countElem];
+            for (T elem : arrayElemCopy)    {
+                arrayElem[i] = elem;
+                i++;
             }
-            arrayElemNew[arrayElem.length] = newElem;
-            arrayElem = arrayElemNew;
+        }
+        arrayElem[count] = newElem;
+    }
+    @Override
+    public void remove(T elem) {
+        int i = 0;
+        for (T el : arrayElem)  {
+            if (el.toString().equals(elem.toString()))  {
+                remove(i);
+                break;
+            }
+            i++;
         }
     }
 
     @Override
     public void remove (int index)  {
         try {
+            int count = count();
             T[] arrayElemNew = (T[]) new Object[arrayElem.length - 1];
+            if (index >= count) {
+                throw new Exception();
+            }
             for (int i = 0 ; i < index; i++)    {
                 arrayElemNew[i] = arrayElem[i];
             }
-            for (int i = index + 1; i < arrayElem.length; i++)   {
+            for (int i = index + 1; i < count; i++)   {
                 arrayElemNew[i-1] = arrayElem[i];
             }
             arrayElem = arrayElemNew;
@@ -38,7 +54,9 @@ public class CollectionArray <T> implements CustomCollection<T> {
 
     @Override
     public int count()  {
-        return arrayElem.length;
+        int i;
+        for (i = 0; arrayElem[i] != null; i++)  {}
+        return i;
     }
 
     @Override

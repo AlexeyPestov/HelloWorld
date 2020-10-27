@@ -23,4 +23,8 @@ public abstract class Fruit {
     public void setInBox(boolean inBox) {
         this.inBox = inBox;
     }
+
+    public Class getCL()    {
+        return this.getClass();
+    }
 }

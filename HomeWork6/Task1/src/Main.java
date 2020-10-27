@@ -11,7 +11,9 @@ public class Main {
         coll.add(6);
         coll.add(7);
         System.out.println(coll.count());
-        coll.remove(10);
+        coll.remove(1);
+        Integer el = 5;
+        coll.remove(el);
         coll.count();
 
         CustomCollection<String> coll2 = new CollectionLink<>();
@@ -19,7 +21,7 @@ public class Main {
         coll2.add("b");
         coll2.add("c");
         System.out.println(coll2.count());
-        coll2.remove(1);
+        coll2.remove(0);
         System.out.println(coll2.count());;
     }
 }

@@ -27,8 +27,8 @@ public class Main {
         box2.put(apple2);
         box2.put(apple3);
 
-        System.out.println(Box.compare(box1, box3));
-        Box.shifting(box1, box3);
+        System.out.println(box1.compare(box3));
+        box1.shifting(box3);
 
     }
 }

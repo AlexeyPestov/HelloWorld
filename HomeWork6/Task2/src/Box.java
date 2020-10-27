@@ -7,7 +7,6 @@ public class Box<T extends Fruit> {
     public ArrayList<T> getFruitsBox() {
         return fruitsBox;
     }
-
     public void put (T fruit)   {
         if (fruit.isInBox())    {
             System.out.println("Этот фрукт уже в другой коробке");
@@ -25,33 +24,26 @@ public class Box<T extends Fruit> {
         return weight;
     }
 
-    public static boolean compare (Box box1, Box box2)  {
-        return box1.getWeight() == box2.getWeight();
+    public boolean compare (Box box2)  {
+        return this.getWeight() == box2.getWeight();
     }
 
-    public static void shifting (Box box1, Box box2)    {
-        ArrayList<Fruit> fruitBox1 = box1.getFruitsBox();
-        ArrayList<Fruit> fruitBox2 = box2.getFruitsBox();
-        String classBox1 = classBox(box1);
-        String classBox2 = classBox(box2);
+    public void shifting (Box box2)    {
+        ArrayList fruitBox2 = box2.getFruitsBox();
 
-        if (fruitBox1 == null)  {
-            System.out.println("Коробка 1 пустая");
+        if (fruitsBox == null)  {
+            System.out.println("Текущая коробка пустая");
             return;
         }
         if (fruitBox2 == null)  {
             System.out.println("Коробка 2 пустая");
             return;
         }
-        if(!classBox1.equals(classBox2))    {
+        if(fruitsBox.get(0).getClass().equals(fruitBox2.get(0).getClass())) {
             System.out.println("В коробке 1 не те фрукты, которые можно переложить в коробку 2");
             return;
         }
-        fruitBox2.addAll(fruitBox1);
-        fruitBox1.clear();
-    }
-
-    private static String classBox (Box<Fruit> box)   {
-        return box.getFruitsBox().get(0).getClass().getName();
+        fruitBox2.addAll(fruitsBox);
+        fruitsBox.clear();
     }
 }
