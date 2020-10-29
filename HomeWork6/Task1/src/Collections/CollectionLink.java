@@ -1,61 +1,38 @@
 package Collections;
 
 public class CollectionLink<T> implements CustomCollection<T> {
-    static int countElem = 1;
-    ElemLink<T>[] arrayElem = new ElemLink [countElem];
+    private int size = 0;
+    private ElemLink <T> startCol;
+    private ElemLink <T> endCol;
 
     @Override
-    public void add(T newElem) {
-        int i = count();
-        if (i == countElem) {
-            countElem *= 2;
-            ElemLink<T>[] newArray = new ElemLink[countElem];
-            int j = 0;
-            for (ElemLink el : arrayElem)   {
-                newArray[j] = el;
-                j++;
-            }
-            arrayElem = newArray;
-
+    public void add(T data) {
+        ElemLink <T> newElem = new ElemLink<>(null,data,null);
+        if (startCol == null)   {
+            startCol = newElem;
         }
-        if (i == 0) {
-            arrayElem[i] = new ElemLink<>(null,newElem,null);
+        else    {
+            startCol.setNext(newElem);
+            newElem.setPrev(startCol);
         }
-        else {
-            arrayElem[i] = new ElemLink<T>(arrayElem[i - 1], newElem, null);
-            arrayElem[i - 1].setNext(arrayElem[i]);
-        }
+        endCol = newElem;
+        size++;
     }
 
     @Override
     public void remove(int index) {
-        int end = count() - 1;
         ElemLink el = get(index);
-        ElemLink elPrev = el.getPrev();
-        ElemLink elNext = el.getNext();
-        if (elNext != null) {
-            elNext.setPrev(elPrev);
-        }
-        if (elPrev != null) {
-            elPrev.setNext(elNext);
-        }
-        ElemLink<T>[] newArray = new ElemLink[countElem];
-        for (int i = 0; i < index; i++) {
-            newArray[i] = arrayElem[i];
-        }
-        for (int i = index; i < end; i++)  {
-            newArray[i] = arrayElem[i+1];
-        }
-        arrayElem = newArray;
-
+        removeSearchElement(el);
     }
 
     public ElemLink get(int index)  {
         int i = 0;
-        for (ElemLink el : arrayElem)   {
+        ElemLink curElem = startCol;
+        while (curElem != null)   {
             if (i == index) {
-                return el;
+                return curElem;
             }
+            curElem = curElem.getNext();
             i++;
         }
         return null;
@@ -63,32 +40,51 @@ public class CollectionLink<T> implements CustomCollection<T> {
 
     @Override
     public void remove(T elem) {
-        int i = 0;
-        for (ElemLink el : arrayElem)   {
-            if (el == elem) {
-                remove(i);
+        ElemLink curElem = startCol;
+        while (curElem != null) {
+            if (curElem.getContent() == elem)   {
                 break;
             }
-            i++;
+            curElem = curElem.getNext();
+        }
+        removeSearchElement(curElem);
+    }
+
+    private void removeSearchElement (ElemLink el)  {
+        try {
+            if (el == null) {
+                throw new Exception("Element not found");
+            }
+            ElemLink elPrev = el.getPrev();
+            ElemLink elNext = el.getNext();
+            if (elPrev != null) {
+                elPrev.setNext(elNext);
+            }
+            if (elNext != null) {
+                elNext.setPrev(elPrev);
+            }
+            el = null;
+            size--;
+        }
+        catch (Exception ex)    {
+            ex.printStackTrace();
         }
     }
 
 
     @Override
     public int count()  {
-        int i = 0;
-        while ( i < countElem)  {
-            if (arrayElem[i] == null) {
-                return i;
-            }
-            i++;
-        }
-        return i;
+        return size;
     }
 
     @Override
     public void clear() {
-        arrayElem = null;
+        ElemLink elCur = startCol;
+        while (elCur != null)   {
+            ElemLink next = elCur.getNext();
+            elCur = null;
+            elCur = next;
+        }
+        size = 0;
     }
-
 }

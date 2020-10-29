@@ -28,7 +28,7 @@ public class Box<T extends Fruit> {
         return this.getWeight() == box2.getWeight();
     }
 
-    public void shifting (Box box2)    {
+    public void shifting (Box <T> box2)    {
         ArrayList fruitBox2 = box2.getFruitsBox();
 
         if (fruitsBox == null)  {
@@ -37,10 +37,6 @@ public class Box<T extends Fruit> {
         }
         if (fruitBox2 == null)  {
             System.out.println("Коробка 2 пустая");
-            return;
-        }
-        if(fruitsBox.get(0).getClass().equals(fruitBox2.get(0).getClass())) {
-            System.out.println("В коробке 1 не те фрукты, которые можно переложить в коробку 2");
             return;
         }
         fruitBox2.addAll(fruitsBox);

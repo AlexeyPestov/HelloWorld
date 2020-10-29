@@ -29,6 +29,5 @@ public class Main {
 
         System.out.println(box1.compare(box3));
         box1.shifting(box3);
-
     }
 }

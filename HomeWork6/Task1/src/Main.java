@@ -5,7 +5,7 @@ import Collections.CustomCollection;
 import java.util.Arrays;
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
         CustomCollection<Integer> coll = new CollectionArray<>();
         coll.add(5);
         coll.add(6);
@@ -14,7 +14,9 @@ public class Main {
         coll.remove(1);
         Integer el = 5;
         coll.remove(el);
-        coll.count();
+        System.out.println(coll.count());
+        coll.clear();
+        System.out.println(coll.count());
 
         CustomCollection<String> coll2 = new CollectionLink<>();
         coll2.add("a");
@@ -22,6 +24,8 @@ public class Main {
         coll2.add("c");
         System.out.println(coll2.count());
         coll2.remove(0);
-        System.out.println(coll2.count());;
+        System.out.println(coll2.count());
+        coll2.clear();
+        System.out.println(coll2.count());
     }
 }
