@@ -1,7 +1,5 @@
 package Collections;
 
-import java.util.ArrayList;
-
 public class CollectionArray <T> implements CustomCollection<T> {
     static int countElem = 20;
     private int size = 0;

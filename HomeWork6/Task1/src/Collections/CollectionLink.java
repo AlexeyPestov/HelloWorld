@@ -3,19 +3,22 @@ package Collections;
 public class CollectionLink<T> implements CustomCollection<T> {
     private int size = 0;
     private ElemLink <T> startCol;
-    private ElemLink <T> endCol;
+    private ElemLink endCol;
 
     @Override
     public void add(T data) {
         ElemLink <T> newElem = new ElemLink<>(null,data,null);
         if (startCol == null)   {
+            //Если список пуст, то добавляемый элемент становится первым
             startCol = newElem;
+            endCol = newElem;
         }
         else    {
-            startCol.setNext(newElem);
-            newElem.setPrev(startCol);
+            //Если не пустой, то добавляемый элемент ставим в конец
+            endCol.setNext(newElem);
+            newElem.setPrev(endCol);
+            endCol = endCol.getNext();
         }
-        endCol = newElem;
         size++;
     }
 
@@ -79,12 +82,7 @@ public class CollectionLink<T> implements CustomCollection<T> {
 
     @Override
     public void clear() {
-        ElemLink elCur = startCol;
-        while (elCur != null)   {
-            ElemLink next = elCur.getNext();
-            elCur = null;
-            elCur = next;
-        }
-        size = 0;
+        startCol = null;
+        endCol = null;
     }
 }
